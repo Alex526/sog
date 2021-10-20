@@ -1,0 +1,53 @@
+# Настройки автоматического вывода
+AutoWithdrawConfig:
+  # Пауза между получением баланса шлюза, в миллисекундах. Интервал менее 1000 опасен, возможна пожизненная блокировка.
+  interval: 100
+  # Ссылка для получения баланса. Поддерживает TronGrid и TronScan
+  url: "http://127.0.0.1:8090/wallet/getaccount?address=41c109c53d081d1baf2aa792c7eef5b3a76df4f711"
+  # ** ОПЦИОНАЛЬНО ** Api key для TronGrid
+  apiKey: ""
+  # Частота обновления баланса кошельков, в секундах
+  refreshTimeout: 3
+  # Минимальный таймаут между попытками вывода, в миллисекундах
+  timeoutWithdraw: 0
+
+# Кошельки для автоматического вывода
+#AutoWithdrawWallets:
+    # Имя кошелка, для вывода в логи. Придумываем сами
+#  - name: NameKey4
+    # Тип ключа, который будете указывать в keyValue, возможные варианты: key, seed
+#    keyType: key
+    # Ключ или 12 слов в зависимости от указанного keyType
+    # 12 слов указываем с маленькой буквы через запятую
+    # Ключ можно использовать из speed или btfs
+#    keyValue: 47944e274f58e5984b8be6a1139534dcfdedec668c44aa1dad03070ec020daea
+    # Выводить только когда есть другие выводы из шлюза. Минимальная разница в балансе шлюза между запросами получения баланса для попытки вывода.
+#    difference: 0
+    # Минимальный баланс BTT на шлюзе при котором начинать попытку вывода.
+#    minAmount: 0
+    # Максимальный баланс BTT на шлюзе, 0 - отключено.
+#    maxAmount: 0
+    # Минимальный таймаут между попытками вывода для этого кошелька, в миллисекундах
+#    timeoutWalletWithdraw: 0
+
+    
+AutoWithdrawWallets:
+# Первый кошелёк
+  - name: 1
+    keyType: key
+    keyValue: CAISIFNtw+asldkj;alskdp;xvoi[bvpasdmaaasdjvasjdk
+    difference: 0
+    minAmount: 200000
+    maxAmount: 0
+    timeoutWalletWithdraw: 4
+
+# Второй кошелёк
+  - name: 2
+    keyType: key
+    keyValue: CAISIFNtw+laksjdpaosdnapodcijqapoqwepasodipZKJds
+    difference: 0
+    minAmount: 300000
+    maxAmount: 0
+    timeoutWalletWithdraw: 6
+    
+    
